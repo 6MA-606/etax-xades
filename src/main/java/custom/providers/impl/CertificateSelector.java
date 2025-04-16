@@ -14,10 +14,12 @@
  * You should have received a copy of the GNU Lesser General Public License along
  * with XAdES4j. If not, see <http://www.gnu.org/licenses/>.
  */
-package xades4j.providers.impl;
+package custom.providers.impl;
 
 import java.security.cert.X509Certificate;
 import java.util.List;
+
+import xades4j.providers.impl.KeyStoreKeyingDataProvider;
 
 /**
  *

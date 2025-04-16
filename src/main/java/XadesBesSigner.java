@@ -21,6 +21,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+import custom.providers.impl.DirectPasswordProvider;
+import custom.providers.impl.FirstCertificateSelector;
 import xades4j.UnsupportedAlgorithmException;
 import xades4j.XAdES4jException;
 import xades4j.algorithms.Algorithm;
@@ -37,9 +39,7 @@ import xades4j.providers.AlgorithmsProviderEx;
 import xades4j.providers.KeyingDataProvider;
 import xades4j.providers.SigningCertChainException;
 import xades4j.providers.impl.DefaultAlgorithmsProviderEx;
-import xades4j.providers.impl.DirectPasswordProvider;
 import xades4j.providers.impl.FileSystemKeyStoreKeyingDataProvider;
-import xades4j.providers.impl.FirstCertificateSelector;
 import xades4j.providers.impl.PKCS11KeyStoreKeyingDataProvider;
 import xades4j.verification.UnexpectedJCAException;
 

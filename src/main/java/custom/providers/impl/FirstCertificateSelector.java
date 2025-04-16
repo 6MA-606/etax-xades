@@ -14,29 +14,20 @@
  * You should have received a copy of the GNU Lesser General Public License along
  * with XAdES4j. If not, see <http://www.gnu.org/licenses/>.
  */
-package xades4j.providers.impl;
+package custom.providers.impl;
 
 import java.security.cert.X509Certificate;
+import java.util.List;
+
+import xades4j.providers.impl.KeyStoreKeyingDataProvider;
 
 /**
  *
  * @author Luís
  */
-public class DirectPasswordProvider implements KeyStoreKeyingDataProvider.KeyStorePasswordProvider,
-		KeyStoreKeyingDataProvider.KeyEntryPasswordProvider {
-	private char[] password;
-
-	public DirectPasswordProvider(String password) {
-		this.password = password.toCharArray();
-	}
-
+public class FirstCertificateSelector implements KeyStoreKeyingDataProvider.SigningCertSelector {
 	@Override
-	public char[] getPassword() {
-		return password;
-	}
-
-	@Override
-	public char[] getPassword(String entryAlias, X509Certificate entryCert) {
-		return password;
+	public X509Certificate selectCertificate(List<X509Certificate> availableCertificates) {
+		return availableCertificates.get(0);
 	}
 }
